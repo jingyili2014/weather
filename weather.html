@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather App</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+	<div class="jumbotron title">
+		<h1 class="text-center">Current Weather App</h1>
+	</div>
+
+	<div class="container" style="height: 40rem;">
+		<div style="margin-bottom: 20px;">
+			<h3 class="text-center" style="color: #248f8f;">Enter City Name</h3>
+			<span id="error"></span>		
+		</div>
+
+		<div class="container">
+			<div id="form">
+				<input type="text" name="city" id="city" placeholder=" City Name">
+				<button id="submitWeather" class="btn">Search</button>
+			</div>			
+		</div>
+
+		<div id="show"></div>
+	</div>
+
+
+<div class="footer">
+	<div class="container">
+		<div class="text-center" style="padding-top: 30px;">
+			<p style="color: white; font-size: 20px;">Copyright &copy; Current Weather App</p>
+		</div>
+	</div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="weather.js"></script>
+</body>
+</html>
