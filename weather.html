@@ -5,35 +5,69 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-	<div class="jumbotron title">
-		<h1 class="text-center">Current Weather App</h1>
-	</div>
-
-	<div class="container" style="height: 40rem;">
-		<div style="margin-bottom: 20px;">
-			<h3 class="text-center" style="color: #248f8f;">Enter City Name</h3>
-			<span id="error"></span>		
-		</div>
-
+	<div class="bg-img">
 		<div class="container">
-			<div id="form">
-				<input type="text" name="city" id="city" placeholder=" City Name">
-				<button id="submitWeather" class="btn">Search</button>
-			</div>			
+			<div class="row">
+				<i class="fas fa-snowflake logo"></i>
+				<h5 class="logo2">City Weather App</h5>
+			</div>
 		</div>
 
-		<div id="show"></div>
+		<div class="title">
+			<h1 class="text-center font-lg">City Weather App</h1>
+		</div>
+
+		<div class="container bg-img-2">
+			<div class="container">
+				<div id="form">
+					<input type="text" name="city" id="city" class="border rounded" placeholder=" Enter City Name">
+					<button id="submitWeather" class="btn">Search</button>
+				</div>			
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-12">
+						<div id="show" class="text-white"></div>
+					</div>
+
+					<div class="col-md-6 col-12">
+						<div class="container">
+							<div class="row mx-3 text-center">
+								<div class="col-12 col-md-4 my-3">
+									<div id="detail_1" class="text-white detail"></div>
+								</div>
+								<div class="col-12 col-md-4 my-3">
+									<div id="detail_2" class="text-white detail"></div>
+								</div>
+								<div class="col-12 col-md-4 my-3">
+									<div id="detail_3" class="text-white detail"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					
+				</div>
+			</div>
+
+
+			<div id="show2" class="currentWeather"></div>
+		</div>
 	</div>
+	
 
 
 <div class="footer">
 	<div class="container">
 		<div class="text-center" style="padding-top: 30px;">
-			<p style="color: white; font-size: 20px;">Copyright &copy; Current Weather App</p>
+			<p style="color: white;">Copyright &copy; City Weather App</p>
 		</div>
 	</div>
 </div>

@@ -15,25 +15,98 @@ $(document).ready(function() {
 				}
 			});
 		} else {
-			$("#error").html('<div class="alert alert-danger" role="alert">City cannot be empty</div>');
+			alert("City cannot be empty");
 		}
 	});
 });
 
 
+
+$(document).ready(function() {
+	$('#submitWeather').click(function() {
+		var city = $("#city").val();
+
+		$.ajax({
+			url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric" +
+			"&APPID=c10bb3bd22f90d636baa008b1529ee25",
+			type: "GET",
+			dataType: "jsonp",
+			success: function(data){
+				var widget = detail_1(data);
+				$('#detail_1').html(widget);
+				$('#city').val('');
+			}
+		});
+	});
+});
+
+$(document).ready(function() {
+	$('#submitWeather').click(function() {
+		var city = $("#city").val();
+
+		$.ajax({
+			url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric" +
+			"&APPID=c10bb3bd22f90d636baa008b1529ee25",
+			type: "GET",
+			dataType: "jsonp",
+			success: function(data){
+				var widget = detail_2(data);
+				$('#detail_2').html(widget);
+				$('#city').val('');
+			}
+		});
+	});
+});
+
+
+
+$(document).ready(function() {
+	$('#submitWeather').click(function() {
+		var city = $("#city").val();
+
+		$.ajax({
+			url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric" +
+			"&APPID=c10bb3bd22f90d636baa008b1529ee25",
+			type: "GET",
+			dataType: "jsonp",
+			success: function(data){
+				var widget = detail_3(data);
+				$('#detail_3').html(widget);
+				$('#city').val('');
+			}
+		});
+	});
+});
+
+
 function show(data) {
-	return "<h5 style='margin-top: 3rem; margin-bottom: 3rem;'>Current Weather for " 
-	       + data.name + ", " + data.sys.country + "</h5>" + 
-	       "<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>" +
-	       "<p><strong>Weather</strong>: "+ data.weather[0].main +"</p>" +
-		   "<p><strong>Description</strong>: "+ data.weather[0].description +"</p>" + 
-		   "<p><strong>Temperature</strong>: "+ data.main.temp +"&deg;C</p>" +
-		   "<p><strong>Pressure</strong>: "+ data.main.pessure +" hPa</p>" +
-		   "<p><strong>Humidity</strong>: "+ data.main.humidity +"%</p>" +
-		   "<p><strong>Minimum temp</strong>: "+ data.main.temp_min +"&deg;C</p>" +
-		   "<p><strong>Maximum temp</strong>: "+ data.main.temp_max +"&deg;C</p>" +
-		   "<p><strong>Wind speed</strong>: "+ data.wind.speed +" m/s</p>" +
-		   "<p><strong>Wind direction</strong>: "+ data.wind.deg +"&deg;C</p>";
+	return "<h3 style='margin-top: 3rem; margin-bottom: 3rem;'>" + data.name + "</h3>" + 
+	       "<h5 style='margin: 0;'>"+ data.weather[0].main +"</h5>" +
+	       "<h1>"+ data.main.temp +" &deg;</h1>" + 
+	       "<img style='width: 50px;' src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>";	   
+}
 
 
+
+function detail_1(data) {
+	return "<p style='font-size: 0.8rem; margin-top: 2rem; margin-bottom:0;'>CLOUNDS</p>" + 
+		   "<p>" + data.clouds.all + "%</p>" + 
+		   "<p style='font-size: 0.8rem; margin-top: 2rem; margin-bottom:0;'>WIND</p>" + 
+		   "<p>"+ data.wind.speed +" m/s</p>";
+
+}
+
+function detail_2(data) {
+	return "<p style='font-size: 0.8rem; margin-top: 2rem; margin-bottom:0;'>MAX TEMP</p>" + 
+	       "<p>"+ data.main.temp_max +"&deg;C</p>" +
+	       "<p style='font-size: 0.8rem; margin-top: 2rem; margin-bottom:0;'>MIN TEMP</p>" +
+		   "<p>"+ data.main.temp_min +"&deg;C</p>";
+
+}
+
+function detail_3(data) {
+	return "<p style='font-size: 0.8rem; margin-top: 2rem; margin-bottom:0;'>HUMIDITY</p>" +
+	       "<p>"+ data.main.humidity +"%</p>" +
+	       "<p style='font-size: 0.8rem; margin-top: 2rem; margin-bottom:0;'>PRESSURE</p>" +
+		   "<p>"+ data.main.pessure +" hPa</p>";
 }
