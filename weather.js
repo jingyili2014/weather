@@ -108,5 +108,5 @@ function detail_3(data) {
 	return "<p style='font-size: 0.8rem; margin-top: 2rem; margin-bottom:0;'>HUMIDITY</p>" +
 	       "<p>"+ data.main.humidity +"%</p>" +
 	       "<p style='font-size: 0.8rem; margin-top: 2rem; margin-bottom:0;'>PRESSURE</p>" +
-		   "<p>"+ data.main.pessure +" hPa</p>";
+		   "<p>"+ data.main.pressure +" hPa</p>";
 }
